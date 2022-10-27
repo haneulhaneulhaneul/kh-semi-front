@@ -1,0 +1,94 @@
+@font-face {
+  font-family: "big-font";
+  src: url("../fonts/neodgm.ttf")
+}
+@font-face {
+  font-family: "medium-font";
+  src: url("../fonts/PF스타더스트\ Bold.ttf")
+}
+@font-face {
+  font-family: "small-font";
+  src: url("../fonts/PF스타더스트S.ttf")
+}
+* {
+  margin: 0;
+}
+.h1 {
+  font-family: "big-font";
+}
+.h2 {
+  font-family: "medium-font";
+}
+.h3 {
+  font-family: "small-font";
+}
+button {
+  font-family: "small-font";
+  font-size: 1.4em;
+  font-weight: bold;
+  width: 100px;
+  height: 40px;
+  background-color: #ed9dcc;
+  border: 3px solid #f38ac7;
+  border-radius: 5px;
+}
+button:hover {
+  background-color: #dbdbdb;
+}
+header {
+  display: block;
+  position: fixed;
+  width: 100%;
+  height: 150px;
+  background-color: #FFD990;
+  padding: 10px;
+  justify-content: center;
+}
+footer {
+  display: block;
+  width: 100%;
+  height: 200px;
+  background-color: #40BAAA;
+  padding: 10px;
+  justify-content: center;
+}
+body {
+  display: block;
+  position: relative;
+  width: 100vw;
+  height: 1000px;
+}
+
+/* 메인 게시판 */
+.board-title {
+  height: 200px;
+  font-family: "medium-font";
+  font-size: 2em;
+  justify-content: center;
+}
+.board-nav {
+  display: flex;
+  justify-content:center;
+}
+ul {
+  list-style: none;
+}
+li {
+  display: inline;
+  padding: 20px;
+  font-family: "medium-font";
+  font-size: 2em;
+}
+li a{
+  color: #8DC0F1;
+  text-decoration-line :none;
+}
+li:hover {
+  background-color: #dbdbdb77;
+  border-radius: 5px;
+}
+.board-write-button {
+  width: 100vw;
+  display: flex;
+  justify-content:center;
+}
