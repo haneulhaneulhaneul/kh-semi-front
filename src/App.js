@@ -1,24 +1,39 @@
 import './App.css';
-// import BoardRead from './pages/BoardRead';
-import BoardMain from './pages/BoardMain';
-// import BoardWrite from './pages/BoardWrite';
-import { BrowserRouter as Router, Routes} from "react-router-dom";
-import Header from './components/Header';
-import Footer from './components/Footer';
+// import FreeBoardRead from './pages/BoardRead';
+import FreeBoardWrite from './pages/BoardWrite';
+import FreeBoardMain from './pages/BoardMain/BoardMain';
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Header from './Layout/Header';
+import Footer from './Layout/Footer';
+
 
 function App() {
   return (
-    <Router>
-      <Routes>
-        <Header />
-        {/* <Route path="/" element={<BoardMain />} />
-        <Route path="/BoardRead" element={<BoardRead />} />
-        <Route path="/BoardWrite" element={<BoardWrite />} /> */}
-        <BoardMain />
-        <Footer />
-      </Routes>
-    </Router>
+    <>
+      <Header />
+      <Router>
+        <Routes>
+          <Route path="/" element={<FreeBoardMain />} /> 
+          <Route path="/BoardWrite" element={<FreeBoardWrite />} />
+          {/* <Route path="/BoardRead" element={<FreeBoardRead />} />
+          <Route path="/BoardWrite" element={<FreeBoardWrite />} /> */}
+        </Routes>
+      </Router>
+      <Footer /> 
+
+    </>
   );
 }
 
 export default App;
+
+// import BoardMain from './pages/BoardMain'
+
+// function App() {
+//   return (
+//     <div className="App">
+//       <BoardMain></BoardMain>
+//     </div>
+//   );
+// }
+// export default App;

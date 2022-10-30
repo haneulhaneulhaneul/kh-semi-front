@@ -1,4 +1,4 @@
-import '../pages/style.css'
+import './Layout.css'
 
 const Header = () => {
   return (

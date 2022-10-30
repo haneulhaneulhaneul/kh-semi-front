@@ -1,44 +1,45 @@
-import Footer from "../components/Footer"
-import Header from "../components/Header"
-import { Link } from "react-router-dom";
+import './style.css';
 
-const BoardRead = () => {
+const FreeBoardRead = () => {
   function onClickMain () {
-    return(
-      <Link to = "/BoardMain" />
+    window.location.replace("/");
+  }
+  function onClickShare () {
+    return (
+      <></>
     )
   }
+  // 등록 확인 모달창 구현 예정
   function onClickUpdate () {
-    return (
-      <></>
-    )
+    window.location.replace("/");
   }
+   // 삭제 확인 모달창 구현 예정
   function onClickDelete () {
-    return (
-      <></>
-    )
+    window.location.replace("/");
   }
 
 return (
   <>
-  <Header />
-  <main>
-    <div>
-      <div>
-        <button className="share-button">공유</button>
+  <body>
+    <div className="board-read-body">
+      <div className='board-title'>
+        <h2>게시판</h2>
+      </div>
+      <div className="board-read-top-button">
+        <button className="share-button" onClick={onClickShare}>공유</button>
         <button className="read-main-button" onClick={onClickMain}>목록</button>
       </div>
       <div className="read-title">글 제목</div>
       <div className="read-info">
-        <div className="id"></div>
-        <div className="date"></div>
-        <div className="viewNum"></div>
+        <div className="id">아이디</div>
+        <div className="date">작성일</div>
+        <div className="viewNum">조회수</div>
       </div>
       <div className="read-contents">글 내용</div>
       {/* display:hidden 로그인 id와 작성자 id가 일치하는 경우에만 hidden 해제*/}
-      <div className="UD">
-        <div className="update" onClick={onClickUpdate}>수정</div>
-        <div className="delete" onClick={onClickDelete}>삭제</div>
+      <div className="read-contents-UD">
+        <button className="update" onClick={onClickUpdate}>수정</button>
+        <button className="delete" onClick={onClickDelete}>삭제</button>
       </div>
       <div className="comment">
         <div className="comment-read-box">
@@ -47,8 +48,8 @@ return (
           <p>작성 날짜</p>
           {/* display:hidden 로그인id와 댓글 작성자id가 일치하는 경우에만 hidden 해제*/}
           <div className="comment-UD">
-            <div className="comment-update" onClick={onClickUpdate}>수정</div>
-            <div className="comment-delete" onClick={onClickDelete}>삭제</div>
+            <button className="comment-update" onClick={onClickUpdate}>수정</button>
+            <button className="comment-delete" onClick={onClickDelete}>삭제</button>
           </div>
           <div className="comment-write-box">
             <p>작성자</p>
@@ -56,12 +57,10 @@ return (
             <button>등록</button>
           </div>
         </div>
-
       </div>
     </div>
-  </main>
-  <Footer />
+  </body>
   </>
 )
 }
-export default BoardRead
+export default FreeBoardRead
