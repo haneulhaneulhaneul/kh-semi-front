@@ -1,13 +1,29 @@
 import React from 'react';
 import '../style.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import FBoardRead from "./BoardListTable";
+import FBoardList from './Components/BoardListTable';
 
 const FreeBoardMain = () => {
 
   function onClickWrite() {
     window.location.replace("/BoardWrite");
   };
+
+  function onClickFree() {
+    window.location.replace("/BoardFree");
+  }
+
+  function onClickTrade() {
+    window.location.replace("/BoardTrade");
+  }
+
+  function onClickRecommend() {
+    window.location.replace("/BoardRecommend");
+  }
+
+  function onClickTip() {
+    window.location.replace("/BoardTip");
+  }
 
   return (
     <div className="container">
@@ -16,10 +32,10 @@ const FreeBoardMain = () => {
       </div>
       <div className='board-nav'>
         <ul>
-          <li><a href="/">자유글</a></li>
-          <li><a href="/">양도/교환</a></li>
-          <li><a href="/">테마추천</a></li>
-          <li><a href="/">방탈출팁</a></li>
+          <li onClick={onClickFree}>자유글</li>
+          <li onClick={onClickTrade}>양도/교환</li>
+          <li onClick={onClickRecommend}>테마추천</li>
+          <li onClick={onClickTip}>방탈출팁</li>
         </ul>
       </div>
       <div className="board-list">
@@ -27,7 +43,7 @@ const FreeBoardMain = () => {
           <button onClick={onClickWrite}>작성하기</button>
         </div>
         <div className="container-sm">
-          <FBoardRead />
+          <FBoardList />
         </div>
       </div>
     </div>

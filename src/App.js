@@ -13,7 +13,7 @@ function App() {
       <Header />
       <Router>
         <Routes>
-          <Route path="/" element={<FreeBoardMain />} /> 
+          <Route path="/" element={<FreeBoardMain />} />    
           <Route path="/BoardWrite" element={<FreeBoardWrite />} />
           {/* <Route path="/BoardRead" element={<FreeBoardRead />} />
           <Route path="/BoardWrite" element={<FreeBoardWrite />} /> */}

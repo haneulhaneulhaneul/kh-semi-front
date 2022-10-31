@@ -1,11 +1,12 @@
 import { useState, useEffect } from 'react';
-import Api from '../../api/Api';
+import Api from '../../../api/Api';
 // import '../App.css'
 import Table from 'react-bootstrap/Table';
 import 'bootstrap/dist/css/bootstrap.css';
+import { Link } from 'react-router-dom';
 
 
-const FBoardRead = () => {
+const FBoardList = () => {
   const [FBoardList, setFBoardList] = useState('');
   const [loading, setLoading] = useState(false);
 
@@ -46,7 +47,7 @@ const FBoardRead = () => {
           {FBoardList && FBoardList.map((list) => (
             <tr key={list.fb_id}>
               <td>{list.fb_category}</td>
-              <td>{list.fb_title}</td>
+              <td><Link to={`/${list.fb_id}`}>{list.fb_title}</Link></td>
               <td>{list.fb_user_id}</td>
               <td>{list.fb_c_date}</td>
               <td>{list.fb_hit}</td>
@@ -57,4 +58,4 @@ const FBoardRead = () => {
     </div>
   );
 }
-export default FBoardRead;
+export default FBoardList;

@@ -69,11 +69,12 @@ li {
   padding: 20px;
   font-family: "medium-font";
   font-size: 2em;
+  color: #8DC0F1;
 }
-li a{
+/* li a{
   color: #8DC0F1;
   text-decoration-line :none;
-}
+} */
 li:hover {
   background-color: #dbdbdb77;
   border-radius: 5px;
@@ -170,7 +171,16 @@ select {
   margin: 10px;
 }
 
-.submit-button {
+.write-page-button {
+  width: 647px;
+  text-align: right;
+}
+
+.cancel-button, submit-button {
+  margin: 10px;
+}
+
+/* .submit-button {
   width: 150px;
   height: 40px;
   font-size: 30px;
@@ -181,7 +191,7 @@ select {
   border-radius: 5px;
   margin-top: 40px;
   vertical-align: middle;
-}
+} */
 
 .ck.ck-editor__editable:not(.ck-editor__nested-editable) {
   min-height: 500px;
