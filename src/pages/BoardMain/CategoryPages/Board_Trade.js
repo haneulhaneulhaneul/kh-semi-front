@@ -1,9 +1,9 @@
 import React from 'react';
-import '../style.css';
+import '../../../pages/style.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
-import FBoardList from './Components/BoardListTable';
+import TradeBoardList from '../Components/TradeBoardList';
 
-const FreeBoardMain = () => {
+const FreeBoardTrade = () => {
 
   function onClickWrite() {
     window.location.replace("/BoardWrite");
@@ -15,19 +15,19 @@ const FreeBoardMain = () => {
 
   function onClickFree() {
     window.location.replace("/BoardFree");
-  }
+  };
 
   function onClickTrade() {
     window.location.replace("/BoardTrade");
-  }
+  };
 
   function onClickRecommend() {
     window.location.replace("/BoardRecommend");
-  }
+  };
 
   function onClickTip() {
     window.location.replace("/BoardTip");
-  }
+  };
 
   return (
     <div className="container">
@@ -48,10 +48,10 @@ const FreeBoardMain = () => {
           <button onClick={onClickWrite}>작성하기</button>
         </div>
         <div className="container-sm">
-          <FBoardList />
+          <TradeBoardList />
         </div>
       </div>
     </div>
   );
 }
-export default FreeBoardMain
+export default FreeBoardTrade

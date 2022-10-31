@@ -3,12 +3,44 @@ const HEADER = 'application/json';
 const KH_DOMAIN = "http://localhost:8090/KH_Semi_/";
 
 const Api = {
-    // 게시글 목록 조회 (+상세페이지)
-    FBoardList: async function() {
+    // 게시글(전체글) 목록 조회
+    fBoardList: async function() {
         const regCmd = {
             cmd : "FBoardList"
         }
         return await axios.post(KH_DOMAIN + "BoardListServlet", regCmd, HEADER);
+    },
+
+    // 게시글(자유글) 목록 조회
+    freeBoardList: async function() {
+        const regCmd = {
+            cmd : "FreeBoardList"
+        }
+        return await axios.post(KH_DOMAIN + "FreeBoardListServlet", regCmd, HEADER);
+    },
+
+    // 게시글(양도/교환) 목록 조회
+    tradeBoardList: async function() {
+        const regCmd = {
+            cmd : "TradeBoardList"
+        }
+        return await axios.post(KH_DOMAIN + "TradeBoardListServlet", regCmd, HEADER);
+    },
+
+    // 게시글(테마추천) 목록 조회
+    recommendBoardList: async function() {
+        const regCmd = {
+            cmd : "RecommendBoardList"
+        }
+        return await axios.post(KH_DOMAIN + "RecommendBoardListServlet", regCmd, HEADER);
+    },
+
+    // 게시글(방탈출팁) 목록 조회
+    tipBoardList: async function() {
+        const regCmd = {
+            cmd : "TipBoardList"
+        }
+        return await axios.post(KH_DOMAIN + "TipBoardListServlet", regCmd, HEADER);
     },
 
     // 게시글 작성

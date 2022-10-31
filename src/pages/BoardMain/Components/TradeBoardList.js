@@ -6,16 +6,16 @@ import 'bootstrap/dist/css/bootstrap.css';
 import { Link } from 'react-router-dom';
 
 
-const FBoardList = () => {
-  const [fBoardList, setFBoardList] = useState('');
+const TradeBoardList = () => {
+  const [tradeBoardList, setTradeBoardList] = useState('');
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     const BoardData = async () => {
       setLoading(true);
       try {
-        const response = await Api.fBoardList();
-        setFBoardList(response.data);
+        const response = await Api.tradeBoardList();
+        setTradeBoardList(response.data);
         console.log(response.data)
       } catch (e) {
         console.log(e);
@@ -43,8 +43,8 @@ const FBoardList = () => {
           </tr>
         </thead>
         <tbody>
-          {console.log(fBoardList)}
-          {fBoardList && fBoardList.map((list) => (
+          {console.log(tradeBoardList)}
+          {tradeBoardList && tradeBoardList.map((list) => (
             <tr key={list.fb_id}>
               <td>{list.fb_category}</td>
               <td><Link to={`/${list.fb_id}`}>{list.fb_title}</Link></td>
@@ -58,4 +58,4 @@ const FBoardList = () => {
     </div>
   );
 }
-export default FBoardList;
+export default TradeBoardList;

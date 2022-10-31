@@ -89,6 +89,10 @@ li:hover {
   margin: 0, 0, 20px, 0;
 }
 
+td < {
+  text-decoration-line :none;
+}
+
 /* 게시판 상세 페이지 */
 /* .board-read-top-button {
   width: 900px;
