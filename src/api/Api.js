@@ -11,6 +11,14 @@ const Api = {
         return await axios.post(KH_DOMAIN + "BoardListServlet", regCmd, HEADER);
     },
 
+    // 게시글 상세 페이지 조회
+    boardDetail: async function(fb_id) {
+        const regCmd = {
+            fb_id : fb_id
+        }
+        return await axios.post(KH_DOMAIN + "BoardDetailServlet", regCmd, HEADER);
+    },
+    
     // 게시글(자유글) 목록 조회
     freeBoardList: async function() {
         const regCmd = {

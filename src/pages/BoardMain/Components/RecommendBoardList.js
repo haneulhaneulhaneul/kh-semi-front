@@ -3,12 +3,17 @@ import Api from '../../../api/Api';
 // import '../App.css'
 import Table from 'react-bootstrap/Table';
 import 'bootstrap/dist/css/bootstrap.css';
-import { Link } from 'react-router-dom';
 
 
 const RecommendBoardList = () => {
   const [recommendBoardList, setRecommendBoardList] = useState('');
   const [loading, setLoading] = useState(false);
+
+  const onClickBoardDetail = (val) => {
+    console.log("게시글 상세페이지로 이동 : " + val);
+    window.localStorage.setItem("Detail", val);
+    window.location.replace("/BoardDetail");
+  } 
 
   useEffect(() => {
     const BoardData = async () => {
@@ -45,14 +50,15 @@ const RecommendBoardList = () => {
         <tbody>
           {console.log(recommendBoardList)}
           {recommendBoardList && recommendBoardList.map((list) => (
-            <tr key={list.fb_id}>
-              <td>{list.fb_category}</td>
-              <td><Link to={`/${list.fb_id}`}>{list.fb_title}</Link></td>
-              <td>{list.fb_user_id}</td>
-              <td>{list.fb_c_date}</td>
-              <td>{list.fb_hit}</td>
-            </tr>
-          ))}
+            <tr key={list.fb_id} onClick={()=>onClickBoardDetail(list.fb_id)}>
+            <td>{list.fb_id}</td>
+            <td>{list.fb_category}</td>
+            <td>{list.fb_title}</td>
+            <td>{list.fb_user_id}</td>
+            <td>{list.fb_c_date}</td>
+            <td>{list.fb_hit}</td>
+          </tr>
+        ))}
         </tbody>
       </Table>
     </div>

@@ -9,6 +9,7 @@ import FreeBoardTrade from './pages/BoardMain/CategoryPages/Board_Trade';
 import FreeBoardRecommend from './pages/BoardMain/CategoryPages/Board_Recommend';
 import FreeBoardTip from './pages/BoardMain/CategoryPages/Board_Tip';
 import FreeBoardWrite from './pages/BoardWrite';
+import BoardDetail from './pages/BoardDetail';
 
 
 function App() {
@@ -22,7 +23,7 @@ function App() {
             <Route path="/BoardTrade" element={<FreeBoardTrade />}/> 
             <Route path="/BoardRecommend" element={<FreeBoardRecommend />}/> 
             <Route path="/BoardTip" element={<FreeBoardTip />}/> 
-            
+            <Route path="/BoardDetail" element={<BoardDetail />} />
           <Route path="/BoardWrite" element={<FreeBoardWrite />} />
           {/* <Route path="/BoardRead" element={<FreeBoardRead />} />
           <Route path="/BoardWrite" element={<FreeBoardWrite />} />  */}

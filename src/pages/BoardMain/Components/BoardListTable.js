@@ -3,12 +3,17 @@ import Api from '../../../api/Api';
 // import '../App.css'
 import Table from 'react-bootstrap/Table';
 import 'bootstrap/dist/css/bootstrap.css';
-import { Link } from 'react-router-dom';
 
 
 const FBoardList = () => {
   const [fBoardList, setFBoardList] = useState('');
   const [loading, setLoading] = useState(false);
+
+  const onClickBoardDetail = (val) => {
+    console.log("게시글 상세페이지로 이동 : " + val);
+    window.localStorage.setItem("Detail", val);
+    window.location.replace("/BoardDetail");
+  } 
 
   useEffect(() => {
     const BoardData = async () => {
@@ -35,6 +40,7 @@ const FBoardList = () => {
       <Table class="table table-striped">
         <thead>
           <tr>
+            <th>글번호</th>
             <th>분류</th>
             <th>제목</th>
             <th>작성자</th>
@@ -45,9 +51,10 @@ const FBoardList = () => {
         <tbody>
           {console.log(fBoardList)}
           {fBoardList && fBoardList.map((list) => (
-            <tr key={list.fb_id}>
+            <tr key={list.fb_id} onClick={()=>onClickBoardDetail(list.fb_id)}>
+              <td>{list.fb_id}</td>
               <td>{list.fb_category}</td>
-              <td><Link to={`/${list.fb_id}`}>{list.fb_title}</Link></td>
+              <td>{list.fb_title}</td>
               <td>{list.fb_user_id}</td>
               <td>{list.fb_c_date}</td>
               <td>{list.fb_hit}</td>

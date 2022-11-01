@@ -45,6 +45,7 @@ const FreeBoardMain = () => {
       </div>
       <div className="board-list">
         <div className='board-write-button'>
+          {/* 로그인하지 않은 경우에는 작성 안되도록 모달창 띄우기 구현 예정 */}
           <button onClick={onClickWrite}>작성하기</button>
         </div>
         <div className="container-sm">

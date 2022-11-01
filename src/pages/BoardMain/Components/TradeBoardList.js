@@ -3,12 +3,16 @@ import Api from '../../../api/Api';
 // import '../App.css'
 import Table from 'react-bootstrap/Table';
 import 'bootstrap/dist/css/bootstrap.css';
-import { Link } from 'react-router-dom';
 
 
 const TradeBoardList = () => {
   const [tradeBoardList, setTradeBoardList] = useState('');
   const [loading, setLoading] = useState(false);
+
+  const onClickBoardDetail = (val) => {
+    window.localStorage.setItem("Detail", val);
+    window.location.replace("/BoardDetail");
+  } 
 
   useEffect(() => {
     const BoardData = async () => {
@@ -16,7 +20,6 @@ const TradeBoardList = () => {
       try {
         const response = await Api.tradeBoardList();
         setTradeBoardList(response.data);
-        console.log(response.data)
       } catch (e) {
         console.log(e);
       }
@@ -45,14 +48,15 @@ const TradeBoardList = () => {
         <tbody>
           {console.log(tradeBoardList)}
           {tradeBoardList && tradeBoardList.map((list) => (
-            <tr key={list.fb_id}>
-              <td>{list.fb_category}</td>
-              <td><Link to={`/${list.fb_id}`}>{list.fb_title}</Link></td>
-              <td>{list.fb_user_id}</td>
-              <td>{list.fb_c_date}</td>
-              <td>{list.fb_hit}</td>
-            </tr>
-          ))}
+            <tr key={list.fb_id} onClick={()=>onClickBoardDetail(list.fb_id)}>
+            <td>{list.fb_id}</td>
+            <td>{list.fb_category}</td>
+            <td>{list.fb_title}</td>
+            <td>{list.fb_user_id}</td>
+            <td>{list.fb_c_date}</td>
+            <td>{list.fb_hit}</td>
+          </tr>
+        ))}
         </tbody>
       </Table>
     </div>

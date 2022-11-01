@@ -1,5 +1,6 @@
 import './style.css';
 
+// 레이아웃만 구성해놓은 상태입니다. 아직 구현중.. 
 const FreeBoardRead = () => {
   function onClickMain () {
     window.location.replace("/");
@@ -36,7 +37,7 @@ return (
         <div className="viewNum">조회수</div>
       </div>
       <div className="read-contents">글 내용</div>
-      {/* display:hidden 로그인 id와 작성자 id가 일치하는 경우에만 hidden 해제*/}
+      {/* visibility:hidden 로그인 id와 작성자 id가 일치하는 경우에만 hidden 해제*/}
       <div className="read-contents-UD">
         <button className="update" onClick={onClickUpdate}>수정</button>
         <button className="delete" onClick={onClickDelete}>삭제</button>
@@ -46,7 +47,7 @@ return (
           <p>작성자</p>
           <p>댓글 내용</p>
           <p>작성 날짜</p>
-          {/* display:hidden 로그인id와 댓글 작성자id가 일치하는 경우에만 hidden 해제*/}
+          {/* visibility:hidden 로그인id와 댓글 작성자id가 일치하는 경우에만 hidden 해제*/}
           <div className="comment-UD">
             <button className="comment-update" onClick={onClickUpdate}>수정</button>
             <button className="comment-delete" onClick={onClickDelete}>삭제</button>
